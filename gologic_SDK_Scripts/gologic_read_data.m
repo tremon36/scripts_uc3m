@@ -1,5 +1,5 @@
 function [alpha, clk, data_HDR, data_HSNR] = gologic_read_data(manualMode, pdmMode, DDR_mode, clkTriggered, varargin)
-    %This function can captures and loads data from GoLogic in the case
+    %This function captures and loads data from GoLogic in the case
     %manual mode is deactivated and only loads data from a csv file if
     %operating in manual mode. Only full file path needs to be provided
     %when operating in manual mode.
