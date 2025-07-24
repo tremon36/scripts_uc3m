@@ -1,0 +1,80 @@
+[setup]
+sampling=normal timing;double;100MHz;0Hz;A00 falling;single;a16;
+thresholds=all LVCMOS_15 0.75
+used_channels=xxxx xxxxxxxxxxxxxxxx xxx1111111111111
+glitch_channels=aaaa aaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaa
+transition_channels=aaaa aaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaa
+sample_depth=8192
+simple_state_clocks=A00 falling
+pre_store=0
+SwapABToCD=no
+1wire_sampling=1wire:chan=a01,
+can_sampling=can:chan=a00,baud=250000.00,alt_baud=250000.00,
+clk+data_sampling=DATA:clk=A00,data=A01,
+dmx512_sampling=DMX512:chan=A00,
+espi_sampling=ESPI:clk=A00,cs=A01,io0=A02,io1=A03,io2=A04,io3=A05,alert=A06,
+i2c_sampling=i2c:clk=a00,data=a01,
+i2s_sampling=I2S:clk=A00,data=A01,ws=A02,period=500 ns,order=msb,
+jtag_sampling=JTAG:clk=A00,tms=A01,tdi=A02,tdo=A03,
+lin_sampling=lin:chan=a00,version=1,logic=-,
+mdio_sampling=MDIO:clk=A00,io=A01,
+onfi_sampling=ONFI:we_clk=A00,re=A01,ale=A02,cle=A03,ce=A04,io=A05,
+pwm_sampling=PWM:a=A00,b=A01,z=A02,width=8,
+sd_sampling=SD:clk=A00,cmd=A01,d0=A02,d1=A03,d2=A04,d3=A05,period=20 ns,
+sent_sampling=SENT:chan=A00,
+spi_sampling=spi:clk=a00,cs=none,miso=a02,mosi=a01,period=1000 ns,order=msb,
+spiquad_sampling=SPIQUAD:clk=A00,cs=A01,io0=A02,io1=A03,io2=A04,io3=A05,chip=8,
+uart_sampling=uart:chan=a00,logic=-,
+[Trigger Forms]
+form_name=simple
+simple=A00-A12 = x then capture
+series_level1=anything then goto02
+series_level2=anything then capture
+series_contiguous=no
+timebetween_type=greater
+timebetween_lower_time=80 ns
+timebetween_upper_time=82 ns
+timebetween_reset_time=0 ns
+timebetween_event1=anything then capture
+timebetween_event2=anything then capture
+custom_level1_line1=anything then store and capture
+custom_default_action1=goto01
+custom_selective_storage1=all
+custom_glitch_trigger1=yes
+trigger_form_counters=default
+1wire=
+can=id11=x,dlc=0,
+clk+data=data_count=1,bytes=1,d0=1,d0_q==,
+dmx512=
+espi=
+i2c=data_count=0,bytes=0,
+i2s=data_count=1,bytes=1,d0=1,d0_q==,
+jtag=is_instr=y,count=1,
+lin=
+mdio=data_count=1,bytes=1,d0=1,d0_q==,
+onfi=data_count=1,bytes=1,d0=1,d0_q==,
+pwm=
+sd=type=0,c0_d0=yes,count=0,
+sent=count=1,s0=x,d0_n0=0.000000,d0_n1=0.000000,crc0=x,
+spi=data_count=1,bytes=1,d0=1,d0_q==,
+spiquad=
+uart=data_count=1,bytes=1,d0=1,d0_q==,
+[File information]
+device_index=1
+serial_num=01551
+firmware=none
+usb_rom=01551
+main_id_values=Serial: 01551,XL, Chans: 36, Memory: 1GB,Security: unlimited, 11:47 am, 6249 bytes,
+filename=c:\gologic7_sdk\sdkcmdutility\launch_files\config8k.set
+version=5
+version7=7
+driver_ver=6.00.0000
+beta_ver=RC8
+main_ver=7.00.0021
+has_panes=yes
+os_ver=win10/11
+demo=no
+COMMENT1=Values to the right of the "=" (equals sign) use the SDK format.
+[Screen]
+virtual_x=1920
+virtual_y=1080

@@ -1,0 +1,1 @@
+./SDKCmdUtility.exe s="config.set" o="data_export.csv" u=o c="a13-a00" b=BIN #=n k=n
