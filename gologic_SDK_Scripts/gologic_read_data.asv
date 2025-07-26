@@ -3,7 +3,6 @@ function [alpha, clk, data_HDR, data_HSNR] = gologic_read_data(manualMode, pdmMo
     %manual mode is deactivated and only loads data from a csv file if
     %operating in manual mode. Only full file path needs to be provided
     %when operating in manual mode.
-    
     p = inputParser;
     addParameter(p, 'saveFileName', 'default_data_export.csv');
     addParameter(p, 'saveDirectory', '');
@@ -39,20 +38,11 @@ function [alpha, clk, data_HDR, data_HSNR] = gologic_read_data(manualMode, pdmMo
             sample_mode = "simple state";
         else
             sample_freq = "100MHz";
-            sample_mode = "normal timing";
+            sample_mode = 
         end
 
         if DDR_mode
-            clk_edge_mode = "Any";
-        else
-            clk_edge_mode = "Falling";
-        end
-
-        setCustomFile = make_set_file(sample_mode, sample_freq, clk_edge_mode);
-
-        if isfile(setCustomFile)
-            set_file = setCustomFile;
-        end
+        make_set_file()
     
         if isfile(setFile)
             disp("<strong>Starting data acquisition...</strong>");
