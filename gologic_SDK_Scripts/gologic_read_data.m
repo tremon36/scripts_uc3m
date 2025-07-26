@@ -45,7 +45,7 @@ function [alpha, clk, data_HDR, data_HSNR] = gologic_read_data(manualMode, pdmMo
         if DDR_mode
             clk_edge_mode = "any";
         else
-            clk_edge_mode = "Falling";
+            clk_edge_mode = "falling";
         end
 
         setCustomFile = make_set_file(sample_mode, sample_freq, clk_edge_mode);
