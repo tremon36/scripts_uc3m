@@ -10,7 +10,7 @@ function outFile = make_set_file(samplingMode,samplingFreq,clkEdgeMode)
         samplingFreq = "500MHz";
     end
 
-    if (samplingMode == "simple state" || samplingMode == "normal timing") && (samplingFreq == "100MHz" || samplingFreq == "500MHz") && (clkEdgeMode == "Falling" || clkEdgeMode == "Any" || clkEdgeMode == "Rising")
+    if (samplingMode == "simple state" || samplingMode == "normal timing") && (samplingFreq == "100MHz" || samplingFreq == "500MHz") && (clkEdgeMode == "falling" || clkEdgeMode == "any" || clkEdgeMode == "rising")
 
         txt = fileread(inputFile);
         txt_modificado = strrep(txt, '%sampling_mode%', samplingMode);
@@ -22,6 +22,6 @@ function outFile = make_set_file(samplingMode,samplingFreq,clkEdgeMode)
         fclose(fid);
     else
         error("Invalid parameters: Check sampling mode, frequency, and clock edge mode." + newline + "Sampling mode: simple state (clk triggered) or normal timing." + newline + "Sampling freq: 100MHz or clk triggered" ...
-            + newline + "Clock edge mode: Falling or Rising or Any");
+            + newline + "Clock edge mode: falling or rising or any");
     end
 end

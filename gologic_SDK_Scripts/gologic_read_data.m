@@ -3,7 +3,7 @@ function [alpha, clk, data_HDR, data_HSNR] = gologic_read_data(manualMode, pdmMo
     %manual mode is deactivated and only loads data from a csv file if
     %operating in manual mode. Only full file path needs to be provided
     %when operating in manual mode.
-    
+
     p = inputParser;
     addParameter(p, 'saveFileName', 'default_data_export.csv');
     addParameter(p, 'saveDirectory', '');
@@ -43,7 +43,7 @@ function [alpha, clk, data_HDR, data_HSNR] = gologic_read_data(manualMode, pdmMo
         end
 
         if DDR_mode
-            clk_edge_mode = "Any";
+            clk_edge_mode = "any";
         else
             clk_edge_mode = "Falling";
         end
